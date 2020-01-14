@@ -1,19 +1,16 @@
 
-package kata3;
+package kata4;
 
-public class Kata3 {
+import java.util.List;
+
+public class Kata4 {
 
     
     public static void main(String[] args) {
-        Histrogram<String> histogram = new Histrogram();
-        histogram.increment("ulpgc.es");
-        histogram.increment("dis.ulpgc.es");
-        histogram.increment("ulpgc.es");
-        histogram.increment("google.es");
-        histogram.increment("ulpgc.es");
-        histogram.increment("dis.ulpgc.es");
-        histogram.increment("ulpgc.es");
-        HistogramDisplay hist = new HistogramDisplay(histogram);
+        String fileName = "C:/Users/USUARIO/Documents/NetBeansProjects/Kata4/src/kata4/mail.txt";
+        /* I */List<Mail> mailList = MailListReader.read(fileName);
+        /* P */Histogram<String> histogram = MailHistogramBuilder.build(mailList);
+        /* O */HistogramDisplay hist = new HistogramDisplay(histogram);
         hist.execute();
     }
     
